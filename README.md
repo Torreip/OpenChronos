@@ -1,8 +1,7 @@
-plop
-Updates the hidden menu RFBSL to work better.
+OpenChronos
+===========
 
-
-== Status ==
+## Status
 
 Should be fully functional.  The hidden menu RFBSL places the wireless
 update (RFBSL) menu entry as a sub-menu with the battery voltage monitor.
@@ -20,24 +19,24 @@ needing ridiculous preprocessor commands, e.g.
 #if !defined(CONFIG_BATTERY) && defined(CONFIG_DISCRET_RFBSL) && ...
 
 
-== Requirements ==
+## Requirements
 
-msp430-gcc4 http://mspgcc4.sourceforge.net/
-make
-python http://python.org
+* msp430-gcc4 http://mspgcc4.sourceforge.net/
+* make
+* python http://python.org
 
-== Supported Compilers ==
+## Supported Compilers
 
-msp430-gcc4
+* msp430-gcc4
    Working combinations:
    gcc=4.4.3 binutils=2.20.1 libc=20100430
 
-IAR msp430
+* IAR msp430
 
 Patches for more (more efficient) compilers are welcome :-)
 
 
-== HOWTO ==
+## HOWTO
 
 Copy gcc/intrinsics.h into [msp430-gcc-path]/msp430/include/intrinsics.h
 
@@ -56,7 +55,7 @@ It is HIGHLY suggested to make a clean build before you flash the image with:
 
    make clean main
 
-== Problems ==
+## Problems
 
  * Compile / Link problems:
    If you get error messages like this one:
@@ -73,7 +72,7 @@ It is HIGHLY suggested to make a clean build before you flash the image with:
    Your image is simply to large and will not fit into the flash. Try to disable some modules with make config and try again
    Or even better, send some patches that reduce code size ;-)
 
-== Difference to the TI Firmware ==
+## Difference to the TI Firmware
 
  * More Features that can be configured with make config
  * Day of week
@@ -85,7 +84,7 @@ It is HIGHLY suggested to make a clean build before you flash the image with:
    We don't have a compatible object file for that
  * Pressing STAR and UP long sets silent mode (no beep)
 
-== Usefull Tools ==
+## Usefull Tools
  * mspdebug - debugger, proxy for gdb, flasher, ...  
      http://mspdebug.sourceforge.net
  * msp430static - static analyzer for sourcecode
