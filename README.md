@@ -21,9 +21,9 @@ needing ridiculous preprocessor commands, e.g.
 
 ## Requirements
 
-* msp430-gcc4 http://mspgcc4.sourceforge.net/
+* [msp430-gcc4](http://mspgcc4.sourceforge.net/)
 * make
-* python http://python.org
+* [python](http://python.org)
 
 ## Supported Compilers
 
@@ -85,8 +85,5 @@ Or even better, send some patches that reduce code size ;-)
  * Pressing STAR and UP long sets silent mode (no beep)
 
 ## Usefull Tools
- * mspdebug - debugger, proxy for gdb, flasher, ...  
-     http://mspdebug.sourceforge.net
- * msp430static - static analyzer for sourcecode
-     http://msp430static.sourceforge.net/
-   run 'make source_index' to index all source files
+ * [mspdebug](http://mspdebug.sourceforge.net) - debugger, proxy for gdb, flasher, ...  
+ * [msp430static](http://msp430static.sourceforge.net/) - static analyzer for sourcecode. Run 'make source_index' to index all source files
