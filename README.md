@@ -16,7 +16,7 @@ To-do idea (from gibbons): merge the battery, rfbsl, and sync functions
 all into one menu (a "hardware" or "tools" menu, for example). Ideally,
 also make it easier to pick and choose from these three options without
 needing ridiculous preprocessor commands, e.g.
-#if !defined(CONFIG_BATTERY) && defined(CONFIG_DISCRET_RFBSL) && ...
+   #if !defined(CONFIG_BATTERY) && defined(CONFIG_DISCRET_RFBSL) && ...
 
 
 ## Requirements
@@ -27,8 +27,7 @@ needing ridiculous preprocessor commands, e.g.
 
 ## Supported Compilers
 
-* msp430-gcc4
-   Working combinations:
+* msp430-gcc4. Working combinations:
    gcc=4.4.3 binutils=2.20.1 libc=20100430
 
 * IAR msp430
@@ -41,36 +40,37 @@ Patches for more (more efficient) compilers are welcome :-)
 Copy gcc/intrinsics.h into [msp430-gcc-path]/msp430/include/intrinsics.h
 
 To configure your image, run:
-
+```
    make config
-
+```
 which will generate a config.h file that contains the settings for your build.
 
 To compile the image run:
-
+```
    make
-
+```
 
 It is HIGHLY suggested to make a clean build before you flash the image with:
-
+```
    make clean main
+```
 
 ## Problems
 
- * Compile / Link problems:
-   If you get error messages like this one:
-
+ * Compile / Link problems: If you get error messages like this one:
+```
      msp430/bin/ld: build/eZChronos.elf section `.text' will not fit in region `text'
      .../msp430/bin/ld: section .vectors loaded at [000000000000ff80,000000000000ffff] overlaps section .text loaded at [0000000000008000,0000000000013343]
      .../msp430/bin/ld: region `text' overflowed by 13250 bytes
      collect2: ld returned 1 exit status
-
-    or
-     
+```
+or
+```  
      section .vectors loaded at [0000ff80,0000ffff] overlaps section .data loaded at [0000ff4e,0000ffcb]
+```
 
-   Your image is simply to large and will not fit into the flash. Try to disable some modules with make config and try again
-   Or even better, send some patches that reduce code size ;-)
+Your image is simply too large and will not fit into the flash. Try to disable some modules with make config and try again
+Or even better, send some patches that reduce code size ;-)
 
 ## Difference to the TI Firmware
 
